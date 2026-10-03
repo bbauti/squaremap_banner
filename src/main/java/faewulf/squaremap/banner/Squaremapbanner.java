@@ -8,30 +8,29 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class Squaremapbanner implements ModInitializer {
-    public static final Logger LOGGER = LoggerFactory.getLogger("squaremap-banner");
+	public static final Logger LOGGER = LoggerFactory.getLogger("squaremap-banner");
 
-    public static ModConfigs modConfigs;
+	public static ModConfigs modConfigs;
 
-    public static String MODID = "squaremap-banner";
+	public static String MODID = "squaremap-banner";
 
-    @Override
-    public void onInitialize() {
-        LOGGER.info("Cool! Now loading modules and events...");
+	@Override
+	public void onInitialize() {
+		LOGGER.info("Cool! Now loading modules and events...");
 
-        //load config file
-        modConfigs = ConfigHandler.loadConfig();
+		//load config file
+		modConfigs = ConfigHandler.loadConfig();
 
-        ConfigHandler.saveConfig(modConfigs);
+		ConfigHandler.saveConfig(modConfigs);
 
-        this.loadEvents();
-    }
+		this.loadEvents();
+	}
 
-    private void loadEvents() {
-        onWorldLoad.load();
-        onLeftClick.load();
-        onRightClick.load();
-        onPlayerBreakBlock.load();
-        onServerStarted.load();
-        onPlayerLeave.load();
-    }
+	private void loadEvents() {
+		onWorldLoad.load();
+		onLeftClick.load();
+		onRightClick.load();
+		onPlayerBreakBlock.load();
+		onServerStarted.load();
+	}
 }
